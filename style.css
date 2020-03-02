@@ -29,6 +29,8 @@ fonts
 }
 body {
     font-size: 62.5%;
+    font-family: 'Cormorant Garamond';
+    overflow-x: hidden;
 }
 h1,
 h2,
@@ -38,13 +40,26 @@ h4,
     text-transform: uppercase;
 }
 h2 {
-    font-size: 2rem;
-    padding: 15px;
+    font-size: 45px;
+    font-weight: 600;
+}
+h3, 
+h4 {
+    font-size: 29px;
+    font-weight: 600;
 }
 .button {
     padding: 10px;
     color: #FCFCFC;
     background-color: #183399;
+    font-size: 18px;
+    line-height: 29px;
+    font-family: 'Roboto', ;
+}
+p {
+    font-weight: 300;
+    line-height: 29px;
+    margin-bottom: 30px;
 }
 
 /* header code */
@@ -70,11 +85,17 @@ nav li {
 nav ul {
     float: right;
 }
+.fa-bars {
+    display: none;
+    color: white;
+    font-size: 2rem;
+}
 h1 {
     clear: both;
     text-align: center;
-    margin-top: 10%;
-    font-size: 8rem;
+    margin-top: 11%;
+    font-size: 150px;
+    font-weight: medium;
 }
 h1 span {
     display: block;
@@ -84,30 +105,41 @@ h1 span {
     float: right;
     padding: 10px;
     font-size: 1rem;
+    
 }
-/* main */
+.social-media li {
+    padding: 1px;
+}
+/* MAIN */
 
 
 /* first section: news articles */
 .news-articles h2 {
     text-align: center;
     margin: 47px 40px 40px;
+    padding: 15px;
 }
 .news-articles li {
     float: left;
     width: calc(100% / 3 - 14px);
-    margin: 7px;
+    /* margin: 7px; */
 }
 .news-articles img {
     width: 100%;
+}
+.news-article-img-two {
+    margin: 0 14px;
 }
 
 /* second section: weeks hilights */
 .weeks-highlights {
      clear: both;
+     margin-top: 70px;
+     padding: 30px;
 }
 .weeks-highlights div {
     float: left;
+    height: 300px;
 }
 
 .weeks-highlights--image {
@@ -119,40 +151,295 @@ h1 span {
 
 .weeks-highlights--content {
     width: 55%;
+    margin-left: 30px;
+    position: relative;
+}
+.weeks-highlights .button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 /* third section: highlighted articles */
 .highlighted-articles{
     width: 100%;
     clear: both;
-    margin: 100px 0;
+    margin: 43px 0 0;
 }
-.highlighted-articles li {
+.highlighted-articles ul {
+    height: 100%;
+}
+.highlighted-articles li div {
     float: right;
     width: 50%;
 }
+.highlighted-articles li:nth-child(2n) div {
+    float: left;
+}
+.highlighted-articles li:nth-child(2n) img {
+    right: 17.5vw;
+    top: 0.7vh;
+}
+
 .highlighted-articles img {
-    width: 80%;
+    width: 54vw;
+    position: relative;
+    z-index: -3;
+}
+.highlighted-articles-content{
+    padding: 0 30px 0 0;
+    height: 41.5vh;
+    background-color: white;
+
+}
+.highlighted-articles-content p {
+    padding: 0 0 20px;
+}
+.highlighted-articles-content.two  {
+    padding: 70px 30px 0 45px;
+}
+.highlighted-articles-content.two {
+    z-index: -2;
+}
+.highlighted-articles-image {
+    position: relative;
+    width: 50vw;
 }
 
 /* fourth section: features */
-section.features {
+.features {
     background-image: url(images/image-9.jpg);
     background-size: cover;
     clear: both;
+    height: 300px;
+    color: white;
+}
+.features ul {
+    padding: 3% 11%;
 }
 .features li {
     float: left;
+    text-align: center;
 }
-
+.features i {
+    font-size: 3rem;
+    padding: 81px 81px 10px;
+}
 /* footer */
 footer {
     background-color: #E3E3E3;
-    height: 33vh;
-    
+    height: 220px;
+    padding: 64px;
 }
-
+footer h5 {
+    font-size: 22px;
+    font-weight: bold;
+}
+form,
+.contact-and-info {
+    float: left;
+}
+.contact-and-info {
+    line-height: 1.5;
+    margin-left: 70px;
+}
+label#for-email {
+    display: block;
+    padding: 18px 0;
+}
+input#email {
+    border: none;
+    padding: 9px 5px 9px 50px;
+}
+input#submit {
+    border: none;
+    border-radius: 0;
+    padding: 9px 26px;
+    margin: 0;
+    background-color: black;
+    color: white;
+}
+.footer-nav {
+    text-align: right;
+    float: right;
+}
+.footer-nav li {
+    padding: 6px 0;
+}
 .copy {
     background-color: #ACACAC;
     text-align: center;
+    padding: 4px;
+}
+
+
+
+
+/* media queries */
+ @media only screen and (max-width: 850px) {
+    main {
+        text-align: center;
+    }
+    /* header */
+    .social-media, 
+    nav {
+        display: none;
+    }
+    .fa-bars {
+        display: inline;
+        float: right;
+    }
+    h1 {
+        font-size: 115px;
+    }
+    /* first section: news articles  */
+    /* second section: weeks hilights */
+    .weeks-highlights--image img {
+            width: 88%;
+        }
+    .weeks-highlights--content, 
+    .weeks-highlights--image {
+        clear: both;
+    }
+    .weeks-highlights--content {
+        margin: 7px 0 0 0;
+    }
+    .button,
+    .weeks-highlights .button {
+        float: none;
+        position: static;
+        margin: 20px;
+    }
+    .weeks-highlights div, 
+    .highlighted-articles li div {
+        float: none;
+        height: auto;
+        width: auto;
+    }
+    /* third section: hilighted articles */
+
+    .highlighted-articles-content {
+        padding: 30px;
+    }
+    .highlighted-articles img {
+        width: 100vw;
+        position: relative;
+        left: -10px; 
+    }
+    .highlighted-articles-image,
+    .highlighted-articles-content {
+        clear: both;
+    }
+    .highlighted-articles li:nth-child(2n) div {
+        float: none;
+        top: 0;
+    }
+    .highlighted-articles-content.two {
+        padding: 35px;
+    }
+    .highlighted-articles-content {
+        background-color: transparent;
+    }
+     /* fourth section: features  */
+    .features {
+        height: auto;
+    }
+    .features ul {
+        padding: 52px;
+    }
+    .features li {
+        float: none;
+    }
+    .features i {
+        font-size: 8rem;
+    }
+    h4 {
+        padding-bottom: 81px;
+    }
+    /* footer */
+    footer {
+        height: auto;
+        height: 400px;
+    }
+
+
+}
+
+@media only screen and (max-width: 650px) {
+    h1 {
+        font-size: 70px;
+        margin-top: 170px;
+    }
+    h2 {
+        font-size: 22px;
+    }    
+    /* first section: news articles  */
+    .news-articles li{
+        width: calc(100vw / 2 - 26px);
+        margin: 5px;
+    }
+
+    .news-article-img-two {
+        margin: 0;
+    }
+    .news-articles img {
+        margin: 5px;
+    }
+    .news-article-img-three {
+        display: none;
+    }
+    .news-articles h2 {
+        margin: 20;
+    }
+        /* second section: weeks hilights */
+        
+        .weeks-highlights--image img {
+            width: 91%;
+        }
+    /* third section: hilighted articles */
+     /* fourth section: features  */
+    .features {
+        text-align: center;
+    }
+    .features i {
+    padding: 81px 0 10px; 
+    }
+    /*  footer */
+    
+    form {
+        float: none;
+        text-align: center;
+    }
+    input#submit {
+        padding: 9px 75px;
+    }
+    .contact-and-info {
+        margin-left: 0;
+        margin-top: 50px;
+    }
+    .footer-nav {
+        margin-top: 50px;
+    }
+    .footer-nav{
+        padding: 20px 0 0 0;
+        height: 300px;
+    }
+
+}
+
+@media only screen and (max-width: 370px) {
+    h1 {
+        font-size: 50px;
+    }
+    h3, 
+    h4 {
+        font-size: 19px;
+    }
+    .weeks-highlights {
+        padding: 0;
+        margin-top: 0;
+    }
+    .news-articles h2 {
+        margin: 7px
+    }
 }
